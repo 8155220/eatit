@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FF5722</color>
+    <color name="colorPrimaryDark">#E64A19</color>
+    <color name="colorAccent">#FF9800</color>
+
+    <color name="btnSignUp">#E64A19</color>
+    <color name="btnSignActive">#FF9800</color>
+    <color name="overlayBackground">#76333639</color>
+    <color name="overlayActionBar">#0e0d0e</color>
+    <color name="fab_color_pressed">#A9D440</color>
+    <color name="fab_color_normal">#E23</color>
+
+    <!--chatbot watson-->
+    <color name="bg_bubble_self">#009688</color>
+    <color name="bg_bubble_watbot">#FFC107</color>
+</resources>

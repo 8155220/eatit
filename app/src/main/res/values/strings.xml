@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">AndroidEatIt</string>
+    <string name="slogan">No importa donde estes: Cuando estes en casa o oficina, en la playa. te encontraremos y te alimentaremos</string>
+    <string name="title_activity_home">Home</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="forgo_pwd">Olvido su password?</string>
+
+    <string name="navigation_menu_item_chatbot">Asistente</string>
+</resources>
