@@ -1,10 +1,12 @@
 package uagrm.androideatit.Model;
 
+import java.io.Serializable;
+
 /**
  * Created by Shep on 10/25/2017.
  */
 
-public class Food {
+public class Food implements Serializable {
     private String Name,Image,Description,Price,Discount,MenuId;
 
     public Food() {
@@ -65,5 +67,17 @@ public class Food {
 
     public void setMenuId(String menuId) {
         MenuId = menuId;
+    }
+
+    @Override
+    public String toString() {
+        return "Food{" +
+                "Name='" + Name + '\'' +
+                ", Image='" + Image + '\'' +
+                ", Description='" + Description + '\'' +
+                ", Price='" + Price + '\'' +
+                ", Discount='" + Discount + '\'' +
+                ", MenuId='" + MenuId + '\'' +
+                '}';
     }
 }

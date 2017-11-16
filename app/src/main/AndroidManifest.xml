@@ -34,8 +34,9 @@
             android:theme="@style/AppTheme" />
         <activity android:name=".FoodList" />
         <activity android:name=".Cart" />
-        <activity android:name=".FoodDetail" />
+        <activity android:name=".FoodDetail.FoodDetail" />
         <activity android:name=".OrderStatus" />
+        <activity android:name=".FoodDetail.FoodDetailTest" />
         <activity android:name=".Watson.Conversation.ChatBotActivity" />
         <service android:name=".Service.MyFirebaseIdService">
             <intent-filter>

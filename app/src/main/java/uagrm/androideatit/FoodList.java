@@ -25,11 +25,11 @@ import java.util.List;
 
 import uagrm.androideatit.Common.Common;
 import uagrm.androideatit.Database.Database;
+import uagrm.androideatit.FoodDetail.FoodDetail;
+import uagrm.androideatit.FoodDetail.FoodDetailTest;
 import uagrm.androideatit.Interface.ItemClickListener;
 import uagrm.androideatit.Model.Food;
 import uagrm.androideatit.ViewHolder.FoodViewHolder;
-
-import static android.os.Build.VERSION_CODES.M;
 
 public class FoodList extends AppCompatActivity {
     RecyclerView recyclerView;
@@ -225,7 +225,14 @@ public class FoodList extends AppCompatActivity {
                         //start new activity
                         Toast.makeText(FoodList.this,local.getName(),Toast.LENGTH_SHORT).show();
 
-                        Intent foodDetail = new Intent(FoodList.this,FoodDetail.class);
+                        //Original
+                        /*Intent foodDetail = new Intent(FoodList.this,FoodDetail.class);
+                        foodDetail.putExtra("currentFood",model);
+                        foodDetail.putExtra("FoodId",adapter.getRef(position).getKey());
+                        startActivity(foodDetail);*/
+                        Intent foodDetail = new Intent(FoodList.this,FoodDetailTest.class);
+                        System.out.println("MODEL :"+model.toString());
+                        foodDetail.putExtra("currentFood",model);
                         foodDetail.putExtra("FoodId",adapter.getRef(position).getKey());
                         startActivity(foodDetail);
                     }

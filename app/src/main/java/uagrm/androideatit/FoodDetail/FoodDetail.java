@@ -1,8 +1,7 @@
-package uagrm.androideatit;
+package uagrm.androideatit.FoodDetail;
 
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v4.widget.TextViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -28,6 +27,7 @@ import uagrm.androideatit.Database.Database;
 import uagrm.androideatit.Model.Food;
 import uagrm.androideatit.Model.Order;
 import uagrm.androideatit.Model.Rating;
+import uagrm.androideatit.R;
 
 public class FoodDetail extends AppCompatActivity
 implements RatingDialogListener{
@@ -38,6 +38,9 @@ implements RatingDialogListener{
     FloatingActionButton btnCart,btnRating;
     ElegantNumberButton numberButton;
     RatingBar ratingBar;
+
+
+
 
     String foodId="";
 
@@ -114,6 +117,7 @@ implements RatingDialogListener{
     }
 
     private void getRatingFood(String foodId) {
+
         com.google.firebase.database.Query foodRating = ratingTbl.orderByChild("foodId").equalTo(foodId);
 
         foodRating.addValueEventListener(new ValueEventListener() {
@@ -140,6 +144,7 @@ implements RatingDialogListener{
             }
         });
     }
+
 
     private void showRatingDialog() {
         new AppRatingDialog.Builder()
@@ -184,6 +189,7 @@ implements RatingDialogListener{
         });
     }
 
+
     @Override
     public void onPositiveButtonClicked(int value, String comments) {
         //Conseguir Rating y subir a firebase
@@ -192,30 +198,8 @@ implements RatingDialogListener{
                 ,foodId
                 ,String.valueOf(value)
                 ,comments);
-        /*ratingTbl.child(Common.currentUser.getPhone()).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
 
-                if(dataSnapshot.child(Common.currentUser.getPhone()).exists())
-                {
-                    //Elminar Valor antiguo
-                    ratingTbl.child(Common.currentUser.getPhone()).removeValue();
-                    //Actualizar nuevo valor
-                    ratingTbl.child(Common.currentUser.getPhone()).setValue(rating);
-                }
-                else
-                {
-                    //UActualizar nuevo valor
-                    ratingTbl.child(Common.currentUser.getPhone()).setValue(rating);
-                }
-                Toast.makeText(FoodDetail.this,"Gracias por enviar su rating",Toast.LENGTH_SHORT).show();
-            }
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });*/
         ratingTbl.child(Common.currentUser.getPhone()).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -234,13 +218,10 @@ implements RatingDialogListener{
                 }
                 Toast.makeText(FoodDetail.this,"Gracias por enviar su rating",Toast.LENGTH_SHORT).show();
             }
-
             @Override
             public void onCancelled(DatabaseError databaseError) {
-
             }
         });
-
     }
 
     @Override
