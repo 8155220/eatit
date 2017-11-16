@@ -48,7 +48,6 @@
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/btnCart"
         android:src="@drawable/ic_shopping_cart_black_24dp"
-        android:backgroundTint="@android:color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:elevation="6dp"
@@ -60,7 +59,6 @@
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/btnRating"
         android:src="@drawable/ic_star_black_24dp"
-        android:backgroundTint="@android:color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:elevation="6dp"
